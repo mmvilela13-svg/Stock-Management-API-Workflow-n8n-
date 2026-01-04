@@ -1,0 +1,2173 @@
+{
+  "name": "API REST ARMAZEM AUTO Export",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "6a4901dc-a227-4b41-8af5-4bc7bfcf2f96",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*",
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -256,
+        -128
+      ],
+      "id": "f3787b4a-2078-47d7-af95-068f6ca34e78",
+      "name": "Webhook",
+      "webhookId": "6a4901dc-a227-4b41-8af5-4bc7bfcf2f96"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        816,
+        -128
+      ],
+      "id": "aeafaac1-9f4f-4127-b275-12799187ea2e",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "path": "790781a2-9e73-49d6-97dc-8a12b403d8fc",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*",
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        1184,
+        -160
+      ],
+      "id": "335ef5c6-1d50-4210-aee4-3e9b01bfb29f",
+      "name": "Webhook2",
+      "webhookId": "790781a2-9e73-49d6-97dc-8a12b403d8fc"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        2032,
+        -160
+      ],
+      "id": "602ed183-fafd-4a75-b4bc-f6495db6eef7",
+      "name": "Respond to Webhook2"
+    },
+    {
+      "parameters": {
+        "path": "f62c14fb-77ac-437d-8112-d6d272ef29f2",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*",
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -224,
+        208
+      ],
+      "id": "df9acd52-3c06-4331-8c3b-4cffce27d6f5",
+      "name": "Webhook3",
+      "webhookId": "f62c14fb-77ac-437d-8112-d6d272ef29f2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        512,
+        208
+      ],
+      "id": "65284e73-fdc6-4a92-8f21-4d6f5ffa2188",
+      "name": "Respond to Webhook3"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28",
+          "mode": "list",
+          "cachedResultName": "armazen db",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Folha1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.query.id }}",
+            "marca": "={{ $json.query.marca }}",
+            "modelo": "={{ $json.query.modelo }}",
+            "ano": "={{ $json.query.ano }}",
+            "precio": "={{ $json.query.preco }}",
+            "combustible ": "={{ $json.query.combustivel }}",
+            "km": "={{ $json.query.quilometros }}",
+            "cor": "={{ $json.query.cor }}",
+            "portas": "={{ $json.query.portas }}",
+            "descripcion": "={{ $json.query.descricao }}",
+            "imagenes": "={{ $json.data[0] }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "marca",
+              "displayName": "marca",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "modelo",
+              "displayName": "modelo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ano",
+              "displayName": "ano",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio",
+              "displayName": "precio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "combustible ",
+              "displayName": "combustible ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "km",
+              "displayName": "km",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cor",
+              "displayName": "cor",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "portas",
+              "displayName": "portas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "descripcion",
+              "displayName": "descripcion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "imagenes",
+              "displayName": "imagenes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        576,
+        -128
+      ],
+      "id": "c05d6c3a-8016-4942-944a-6d1bf1ee4896",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "JrlMtWe2wZQS6put",
+          "name": "TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28",
+          "mode": "list",
+          "cachedResultName": "armazen db",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Folha1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.query.id }}",
+            "marca": "={{ $json.query.marca }}",
+            "modelo": "={{ $json.query.modelo }}",
+            "ano": "={{ $json.query.ano }}",
+            "precio": "={{ $json.query.preco }}",
+            "combustible ": "={{ $json.query.combustivel }}",
+            "km": "={{ $json.query.quilometros }}",
+            "cor": "={{ $json.query.cor }}",
+            "portas": "={{ $json.query.portas }}",
+            "descripcion": "={{ $json.query.descricao }}",
+            "imagenes": "={{ $json.query.fotos }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "marca",
+              "displayName": "marca",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "modelo",
+              "displayName": "modelo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ano",
+              "displayName": "ano",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio",
+              "displayName": "precio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "combustible ",
+              "displayName": "combustible ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "km",
+              "displayName": "km",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cor",
+              "displayName": "cor",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "portas",
+              "displayName": "portas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "descripcion",
+              "displayName": "descripcion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "imagenes",
+              "displayName": "imagenes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        128,
+        208
+      ],
+      "id": "522e67e2-7f4e-4a7c-a3c7-66f74065cec7",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "JrlMtWe2wZQS6put",
+          "name": "TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "f0975001-3366-465d-a827-e04b8f6e09c6",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*",
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        1184,
+        192
+      ],
+      "id": "17d20c9a-0722-410c-92ba-a3ebc0fb6cff",
+      "name": "Webhook4",
+      "webhookId": "f0975001-3366-465d-a827-e04b8f6e09c6"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        2032,
+        192
+      ],
+      "id": "48b0898c-af01-4717-bdd9-013196f432f4",
+      "name": "Respond to Webhook4"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28",
+          "mode": "list",
+          "cachedResultName": "armazen db",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Folha1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id",
+              "lookupValue": "={{ $json.query.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1424,
+        -160
+      ],
+      "id": "504b6a71-4fed-4ff2-a23c-f7f3a58b5ffd",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "JrlMtWe2wZQS6put",
+          "name": "TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "clear",
+        "documentId": {
+          "__rl": true,
+          "value": "1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28",
+          "mode": "list",
+          "cachedResultName": "armazen db",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Folha1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit#gid=0"
+        },
+        "clear": "specificRows",
+        "startIndex": "={{ $json.row_number }}"
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1728,
+        -160
+      ],
+      "id": "7a8f4518-d189-4114-8180-965a812649dc",
+      "name": "Clear sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "JrlMtWe2wZQS6put",
+          "name": "TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28",
+          "mode": "list",
+          "cachedResultName": "armazen db",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Folha1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id",
+              "lookupValue": "=6918c9bc024a24fe5e4b5803"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1392,
+        192
+      ],
+      "id": "2da0cbb9-eec5-4238-940d-5990d40c3968",
+      "name": "Get row(s) in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "JrlMtWe2wZQS6put",
+          "name": "TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1E6WJOhxvpAbLbFXkeylxLIalY_KDCAou7J_H6C-qm04",
+          "mode": "list",
+          "cachedResultName": "VENDIDOS armazen db",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1E6WJOhxvpAbLbFXkeylxLIalY_KDCAou7J_H6C-qm04/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Folha1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1E6WJOhxvpAbLbFXkeylxLIalY_KDCAou7J_H6C-qm04/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "marca": "={{ $json.marca }}",
+            "modelo": "={{ $json.modelo }}",
+            "ano": "={{ $json.ano }}",
+            "precio": "={{ $json.precio }}",
+            "combustible ": "={{ $json['combustible '] }}",
+            "km": "={{ $json.km }}",
+            "cor": "={{ $json.cor }}",
+            "portas": "={{ $json.portas }}",
+            "descripcion": "={{ $json.descripcion }}",
+            "imagenes": "={{ $json.imagenes }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "marca",
+              "displayName": "marca",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "modelo",
+              "displayName": "modelo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ano",
+              "displayName": "ano",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio",
+              "displayName": "precio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "combustible ",
+              "displayName": "combustible ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "km",
+              "displayName": "km",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cor",
+              "displayName": "cor",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "portas",
+              "displayName": "portas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "descripcion",
+              "displayName": "descripcion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "imagenes",
+              "displayName": "imagenes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1696,
+        144
+      ],
+      "id": "c14d6c07-6df4-469b-96ef-0af55a624286",
+      "name": "Append row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "JrlMtWe2wZQS6put",
+          "name": "TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "6aace5bb-b112-4579-a873-87deff4311c9",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*",
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -256,
+        576
+      ],
+      "id": "060b01cb-b401-4b37-b0a8-70ec11c8c8fd",
+      "name": "Webhook5",
+      "webhookId": "6aace5bb-b112-4579-a873-87deff4311c9"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1E6WJOhxvpAbLbFXkeylxLIalY_KDCAou7J_H6C-qm04",
+          "mode": "list",
+          "cachedResultName": "VENDIDOS armazen db",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1E6WJOhxvpAbLbFXkeylxLIalY_KDCAou7J_H6C-qm04/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Folha1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1E6WJOhxvpAbLbFXkeylxLIalY_KDCAou7J_H6C-qm04/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id",
+              "lookupValue": "={{ $json.query.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -48,
+        576
+      ],
+      "id": "e99a4fa6-756b-420e-a661-8345279c7362",
+      "name": "Get row(s) in sheet2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "JrlMtWe2wZQS6put",
+          "name": "TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28",
+          "mode": "list",
+          "cachedResultName": "armazen db",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Folha1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "marca": "={{ $json.marca }}",
+            "modelo": "={{ $json.modelo }}",
+            "ano": "={{ $json.ano }}",
+            "precio": "={{ $json.precio }}",
+            "combustible ": "={{ $json['combustible '] }}",
+            "km": "={{ $json.km }}",
+            "cor": "={{ $json.cor }}",
+            "portas": "={{ $json.portas }}",
+            "descripcion": "={{ $json.descripcion }}",
+            "imagenes": "={{ $json.imagenes }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "marca",
+              "displayName": "marca",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "modelo",
+              "displayName": "modelo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ano",
+              "displayName": "ano",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio",
+              "displayName": "precio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "combustible ",
+              "displayName": "combustible ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "km",
+              "displayName": "km",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cor",
+              "displayName": "cor",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "portas",
+              "displayName": "portas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "descripcion",
+              "displayName": "descripcion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "imagenes",
+              "displayName": "imagenes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        272,
+        656
+      ],
+      "id": "cf8910b6-c338-4c3e-b5fa-bac24b5e4b71",
+      "name": "Append row in sheet2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "JrlMtWe2wZQS6put",
+          "name": "TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        576,
+        576
+      ],
+      "id": "fb93568a-5c08-4ebd-a5e2-e637fb4f7f23",
+      "name": "Respond to Webhook5"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28",
+          "mode": "list",
+          "cachedResultName": "armazen db",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Folha1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1360,
+        624
+      ],
+      "id": "7135156e-e220-4470-82d2-6f9b20ab41de",
+      "name": "Get row(s) in sheet3",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "JrlMtWe2wZQS6put",
+          "name": "TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json.CAR }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        2016,
+        624
+      ],
+      "id": "fec91689-1a36-4701-8c56-032ccb4d696a",
+      "name": "Respond to Webhook1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2e9dadfe-bdd3-478f-be7a-8d5bd7b46fea",
+              "name": "CAR.MARCA",
+              "value": "={{ $json.marca }}",
+              "type": "string"
+            },
+            {
+              "id": "5e599fe3-70ce-45e6-bb14-f01656599841",
+              "name": "CAR.modelo",
+              "value": "={{ $json.modelo }}",
+              "type": "string"
+            },
+            {
+              "id": "88fef154-a59a-4845-a656-631801d01c0e",
+              "name": "CAR.ano",
+              "value": "={{ $json.ano }}",
+              "type": "number"
+            },
+            {
+              "id": "2b2408de-414d-4575-9820-c866b6bae8df",
+              "name": "CAR.precio",
+              "value": "={{ $json.precio }}",
+              "type": "number"
+            },
+            {
+              "id": "2e230ffc-32a0-42c3-8b19-1381288e2d0c",
+              "name": "CAR.combustible ",
+              "value": "={{ $json['combustible '] }}",
+              "type": "string"
+            },
+            {
+              "id": "908f3fd3-4284-49bd-9814-c3660c1e8661",
+              "name": "CAR.km",
+              "value": "={{ $json.km }}",
+              "type": "number"
+            },
+            {
+              "id": "ca891a7d-21df-4076-a588-96f978e6ad58",
+              "name": "CAR.cor",
+              "value": "={{ $json.cor }}",
+              "type": "string"
+            },
+            {
+              "id": "87739fe0-709b-4764-80eb-1cb4341c378d",
+              "name": "CAR.portas",
+              "value": "={{ $json.portas }}",
+              "type": "number"
+            },
+            {
+              "id": "7f13fd07-14bb-4a58-a578-c472cd29d0a0",
+              "name": "CAR.descripcion",
+              "value": "={{ $json.descripcion }}",
+              "type": "string"
+            },
+            {
+              "id": "d3d03688-c3e0-4144-879a-53da609337f7",
+              "name": "CAR.imagenes",
+              "value": "={{ $json.imagenes }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1536,
+        624
+      ],
+      "id": "97a5f348-7498-4cdf-a41b-58ab60322e52",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "documentId": {
+          "__rl": true,
+          "value": "1E6WJOhxvpAbLbFXkeylxLIalY_KDCAou7J_H6C-qm04",
+          "mode": "list",
+          "cachedResultName": "VENDIDOS armazen db",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1E6WJOhxvpAbLbFXkeylxLIalY_KDCAou7J_H6C-qm04/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Folha1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit#gid=0"
+        },
+        "startIndex": "={{ $json.row_number }}"
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        272,
+        480
+      ],
+      "id": "328568ec-6d61-44ac-8848-bc5af7ae7a5b",
+      "name": "Delete rows or columns from sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "JrlMtWe2wZQS6put",
+          "name": "TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "documentId": {
+          "__rl": true,
+          "value": "1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28",
+          "mode": "list",
+          "cachedResultName": "armazen db",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Folha1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit#gid=0"
+        },
+        "startIndex": "={{ $json.row_number }}"
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1696,
+        288
+      ],
+      "id": "666cc617-c62a-46eb-9c3c-73058570c8bf",
+      "name": "Delete rows or columns from sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "JrlMtWe2wZQS6put",
+          "name": "TEST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "a17a5ecf-0172-45ef-a3dd-ea18d9098c14",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*",
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Authorization,Content-Type"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        1168,
+        624
+      ],
+      "id": "a1455128-b40a-4d1e-a215-58dec293a02e",
+      "name": "Webhook6",
+      "webhookId": "a17a5ecf-0172-45ef-a3dd-ea18d9098c14"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "CAR"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1744,
+        624
+      ],
+      "id": "977b23a0-428b-488b-b475-4e2cb61910c6",
+      "name": "Aggregate1"
+    },
+    {
+      "parameters": {
+        "content": "## Add Car – Post\n workflow to add cars to the database table.      I cleaned the information in Set and put in the Excel.\n",
+        "height": 304,
+        "width": 1376
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -320,
+        -256
+      ],
+      "typeVersion": 1,
+      "id": "b1352593-cc50-47ea-bdcd-fd172c9e0f7b",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Upgrade Car´s data – patch\n workflow to Upgrade car´s information in the database table.",
+        "height": 304,
+        "width": 1120,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -320,
+        80
+      ],
+      "typeVersion": 1,
+      "id": "d50a4b2a-ed43-4367-95ad-b72a6cde2a0c",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        240,
+        -848
+      ],
+      "id": "701ec9b0-e125-4283-ab47-1bd7b25de35b",
+      "name": "Aggregate",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const urls = JSON.parse($json.imagenes);\n\nconst fotos = {};\nurls.forEach((url, index) => {\n  fotos[`foto${index + 1}`] = url;\n});\n\nreturn [{ json: fotos }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        16,
+        -848
+      ],
+      "id": "2e27de8d-26c0-42b9-8f7e-077c9bf1ce3f",
+      "name": "Code in JavaScript",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "29fb0d10-d7c5-4814-9eba-8d81a561ddd9",
+              "name": "id",
+              "value": "={{ $('Google Sheets Trigger').item.json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "fbc7c52d-f619-48d0-a069-431322be454d",
+              "name": "=marca",
+              "value": "={{ $('Google Sheets Trigger').item.json.marca }}",
+              "type": "string"
+            },
+            {
+              "id": "e5254e78-3dbd-45f1-a935-135706792731",
+              "name": "modelo",
+              "value": "={{ $('Google Sheets Trigger').item.json.modelo }}",
+              "type": "string"
+            },
+            {
+              "id": "4a65f2b0-5f11-4517-b52d-67682e341cec",
+              "name": "ano",
+              "value": "={{ $('Google Sheets Trigger').item.json.ano }}",
+              "type": "number"
+            },
+            {
+              "id": "716631ad-c0cf-49de-80fa-2c785eb5aa28",
+              "name": "precio",
+              "value": "={{ $('Google Sheets Trigger').item.json.precio }}",
+              "type": "number"
+            },
+            {
+              "id": "29f8cf54-af02-459e-b769-a7263a05a9d3",
+              "name": "combustible ",
+              "value": "={{ $('Google Sheets Trigger').item.json['combustible '] }}",
+              "type": "string"
+            },
+            {
+              "id": "eaf496e3-e602-4889-8cfe-94d7e54bf4a4",
+              "name": "km",
+              "value": "={{ $('Google Sheets Trigger').item.json.km }}",
+              "type": "number"
+            },
+            {
+              "id": "5346f491-bcde-4293-9377-b480aa2bda58",
+              "name": "cor",
+              "value": "={{ $('Google Sheets Trigger').item.json.cor }}",
+              "type": "string"
+            },
+            {
+              "id": "c60285ab-afc3-495e-83e7-acdfe936d9f7",
+              "name": "portas",
+              "value": "={{ $('Google Sheets Trigger').item.json.portas }}",
+              "type": "number"
+            },
+            {
+              "id": "4456358f-58b9-4a16-a210-f4a89ff093cc",
+              "name": "descripcion",
+              "value": "={{ $('Google Sheets Trigger').item.json.descripcion }}",
+              "type": "string"
+            },
+            {
+              "id": "2fe3ad5a-8580-4727-aaf0-94cc4f61b58e",
+              "name": "fotos",
+              "value": "={{ $json.data[0] }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        464,
+        -848
+      ],
+      "id": "78446084-1425-4634-a416-41e3d01f64cc",
+      "name": "Edit Fields1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28",
+          "mode": "list",
+          "cachedResultName": "armazen db",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Folha1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tmr0sHBKcUKc6JzbsCMroDfl71S63O9F4cQNVRrrj28/edit#gid=0"
+        },
+        "event": "rowAdded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        -816
+      ],
+      "id": "f7596ae3-597d-4139-ba58-e51792b6c654",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "vtnjasW5Q65mGDUQ",
+          "name": "TEST"
+        }
+      },
+      "disabled": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Delete Cars – Delete\n workflow to delete cars from the database table.",
+        "height": 304,
+        "width": 1120,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1104,
+        -256
+      ],
+      "typeVersion": 1,
+      "id": "82ee0fe7-94ed-4494-85fb-e657478904c9",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## Sold Cars -Patch\n workflow to delete sold cars from the inventory database table ad move them to the sold database table.",
+        "height": 400,
+        "width": 1120,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1104,
+        64
+      ],
+      "typeVersion": 1,
+      "id": "e6062cec-c864-4d6f-9881-bd81b9e8113f",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Return Cars-Patch\n workflow to delete returned cars from the sold database table ad move them to the  inventory database table.",
+        "height": 416,
+        "width": 1120,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -320,
+        400
+      ],
+      "typeVersion": 1,
+      "id": "437aabbc-c549-41cf-9c54-f1fd62fcba3b",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## Get stock Cars - Get\n workflow to get all the available cars from the inventoey database table",
+        "height": 416,
+        "width": 1120,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1120,
+        480
+      ],
+      "typeVersion": 1,
+      "id": "459c1ca9-bf4a-484c-8a52-cc70ce91d920",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        32,
+        -704
+      ],
+      "id": "2508bf21-3dc2-4444-9823-83e81e4607c3",
+      "name": "No Operation, do nothing",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        128,
+        -128
+      ],
+      "id": "72d362b1-2704-4af2-95be-f32f5365670a",
+      "name": "Aggregate2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const urls = JSON.parse($input.first().json.query.fotos);\n\nconst fotos = {};\nurls.forEach((url, index) => {\n  fotos[`foto${index + 1}`] = url;\n});\n\nreturn [{ json: fotos }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -48,
+        -128
+      ],
+      "id": "75c3f22c-291c-480b-b855-531c8ead3982",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5e61a424-e537-4ced-9da3-b04fb767b1be",
+              "name": "query",
+              "value": "={{ $('Webhook').item.json.query }}",
+              "type": "object"
+            },
+            {
+              "id": "510b030d-357b-4424-85cd-e04937abcf34",
+              "name": "data[0]",
+              "value": "={{ $json.data[0] }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        336,
+        -128
+      ],
+      "id": "08283202-1a48-4e1e-a16c-3229d57e4e07",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "content": "## API REST - ARMAZEM AUTO WEB\n\nAdd Car - POST : https://n8n-n8n.sjw220.easypanel.host/webhook/ACBE\n\nUpgrade Car - Patch: https://n8n-n8n.sjw220.easypanel.host/webhook/AC_ACTUALIZAR_STOCK\n\nDelete Cars - Delete: https://n8n-n8n.sjw220.easypanel.host/webhook/AC_STOCK_DELETE\n\nSold Cars - Patch: https://n8n-n8n.sjw220.easypanel.host/webhook/AC_VENDIDO\n\nReturned Cars- Patch: https://n8n-n8n.sjw220.easypanel.host/webhook/AC_NO_VENDIDO\n\nGet All the Cars- Get: https://n8n-n8n.sjw220.easypanel.host/webhook/AC_READ_STOCK\n\n## OBSERVATIONS:\n\nThis API REST is made for an base44 web aplication  to control an Car Dealer´s Stock\n\nWeb App: https://app-989ea33a-7e3c-4894-921a-01cf869d7229.base44.app\n",
+        "height": 464,
+        "width": 720
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1120,
+        -256
+      ],
+      "typeVersion": 1,
+      "id": "fe92eceb-f3d0-4f21-9dfa-090337f80e99",
+      "name": "Sticky Note6"
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n-n8n.sjw220.easypanel.host",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+            "accept": "*/*",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "accept-language": "pt-PT,pt;q=0.9,pt-BR;q=0.8,en;q=0.7,en-US;q=0.6,en-GB;q=0.5",
+            "origin": "https://ta-01ka4acjfg50e677vsxc4qdz8r-5173.wo-exzpb30u2i4ftovt926uxszg5.w.modal.host",
+            "priority": "u=1, i",
+            "referer": "https://ta-01ka4acjfg50e677vsxc4qdz8r-5173.wo-exzpb30u2i4ftovt926uxszg5.w.modal.host/",
+            "sec-ch-ua": "\"Chromium\";v=\"142\", \"Microsoft Edge\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site",
+            "x-forwarded-for": "168.182.214.35",
+            "x-forwarded-host": "n8n-n8n.sjw220.easypanel.host",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "207baab59841",
+            "x-real-ip": "168.182.214.35"
+          },
+          "params": {},
+          "query": {
+            "id": "6918c9bc024a24fe5e4b5803",
+            "marca": "fsfr",
+            "modelo": "fsrfsr",
+            "ano": "2025",
+            "preco": "15454",
+            "combustivel": "Gasolina",
+            "quilometros": "4845484",
+            "cor": "sfrfrs",
+            "portas": "4",
+            "descricao": "fsrfrsfsfs",
+            "fotos": "[\"https://base44.app/api/apps/6918be053a825ced23883c13/files/public/6918be053a825ced23883c13/578639db8_descarregar5.jpg\",\"https://base44.app/api/apps/6918be053a825ced23883c13/files/public/6918be053a825ced23883c13/485ba4c85_descarregar6.jpg\"]",
+            "status": "disponivel"
+          },
+          "body": {},
+          "webhookUrl": "https://n8n-n8n.sjw220.easypanel.host/webhook/ACBE",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Webhook3": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n-n8n.sjw220.easypanel.host",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+            "accept": "*/*",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "accept-language": "pt-PT,pt;q=0.9,pt-BR;q=0.8,en;q=0.7,en-US;q=0.6,en-GB;q=0.5",
+            "origin": "https://ta-01ka4wcy13zn0w2p8x90g5c5rb-5173.wo-9wwmc3wwx54b87k0gb3t135jt.w.modal.host",
+            "priority": "u=1, i",
+            "referer": "https://ta-01ka4wcy13zn0w2p8x90g5c5rb-5173.wo-9wwmc3wwx54b87k0gb3t135jt.w.modal.host/",
+            "sec-ch-ua": "\"Chromium\";v=\"142\", \"Microsoft Edge\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site",
+            "x-forwarded-for": "168.182.214.35",
+            "x-forwarded-host": "n8n-n8n.sjw220.easypanel.host",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "207baab59841",
+            "x-real-ip": "168.182.214.35"
+          },
+          "params": {},
+          "query": {
+            "id": "6918c4087e6708bee7171c9c",
+            "marca": "adedd",
+            "modelo": "dae",
+            "ano": "2025",
+            "preco": "24500",
+            "combustivel": "Gasolina",
+            "quilometros": "5455",
+            "cor": "da1212",
+            "portas": "4",
+            "descricao": "daeea",
+            "fotos": "[\"https://base44.app/api/apps/6918be053a825ced23883c13/files/public/6918be053a825ced23883c13/4ee1eefcd_descarregar6.jpg\"]",
+            "status": "disponivel"
+          },
+          "body": {},
+          "webhookUrl": "https://n8n-n8n.sjw220.easypanel.host/webhook/AC_ACTUALIZAR_STOCK",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Webhook2": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n-n8n.sjw220.easypanel.host",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+            "accept": "*/*",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "accept-language": "pt-PT,pt;q=0.9,pt-BR;q=0.8,en;q=0.7,en-US;q=0.6,en-GB;q=0.5",
+            "origin": "https://ta-01ka4wcy13zn0w2p8x90g5c5rb-5173.wo-9wwmc3wwx54b87k0gb3t135jt.w.modal.host",
+            "priority": "u=1, i",
+            "referer": "https://ta-01ka4wcy13zn0w2p8x90g5c5rb-5173.wo-9wwmc3wwx54b87k0gb3t135jt.w.modal.host/",
+            "sec-ch-ua": "\"Chromium\";v=\"142\", \"Microsoft Edge\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site",
+            "x-forwarded-for": "168.182.214.35",
+            "x-forwarded-host": "n8n-n8n.sjw220.easypanel.host",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "207baab59841",
+            "x-real-ip": "168.182.214.35"
+          },
+          "params": {},
+          "query": {
+            "id": "6918c4087e6708bee7171c9c",
+            "marca": "adedd",
+            "modelo": "dae",
+            "ano": "2025",
+            "preco": "24500"
+          },
+          "body": {},
+          "webhookUrl": "https://n8n-n8n.sjw220.easypanel.host/webhook/AC_STOCK_DELETE",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Webhook4": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n-n8n.sjw220.easypanel.host",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+            "accept": "*/*",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "accept-language": "pt-PT,pt;q=0.9,pt-BR;q=0.8,en;q=0.7,en-US;q=0.6,en-GB;q=0.5",
+            "origin": "https://ta-01ka4wcy13zn0w2p8x90g5c5rb-5173.wo-9wwmc3wwx54b87k0gb3t135jt.w.modal.host",
+            "priority": "u=1, i",
+            "referer": "https://ta-01ka4wcy13zn0w2p8x90g5c5rb-5173.wo-9wwmc3wwx54b87k0gb3t135jt.w.modal.host/",
+            "sec-ch-ua": "\"Chromium\";v=\"142\", \"Microsoft Edge\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site",
+            "x-forwarded-for": "168.182.214.35",
+            "x-forwarded-host": "n8n-n8n.sjw220.easypanel.host",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "207baab59841",
+            "x-real-ip": "168.182.214.35"
+          },
+          "params": {},
+          "query": {
+            "id": "69190db747011b8cc408fe87",
+            "marca": "AUDI",
+            "modelo": "RS5",
+            "ano": "2025",
+            "preco": "150000",
+            "combustivel": "Gasolina",
+            "quilometros": "899",
+            "cor": "1",
+            "portas": "4",
+            "descricao": "TREMENDA BALA",
+            "fotos": "[\"https://base44.app/api/apps/6918be053a825ced23883c13/files/public/6918be053a825ced23883c13/ab1247c99_descarregar8.jpg\",\"https://base44.app/api/apps/6918be053a825ced23883c13/files/public/6918be053a825ced23883c13/ad13b132d_descarregar7.jpg\",\"https://base44.app/api/apps/6918be053a825ced23883c13/files/public/6918be053a825ced23883c13/d0d2f5866_AUDIRS5.jpg\"]",
+            "data_venda": "2025-11-15T23:39:53.910Z"
+          },
+          "body": {},
+          "webhookUrl": "https://n8n-n8n.sjw220.easypanel.host/webhook/AC_VENDIDO",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Webhook5": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n-n8n.sjw220.easypanel.host",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+            "accept": "*/*",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "accept-language": "pt-PT,pt;q=0.9,pt-BR;q=0.8,en;q=0.7,en-US;q=0.6,en-GB;q=0.5",
+            "origin": "https://ta-01ka4wcy13zn0w2p8x90g5c5rb-5173.wo-9wwmc3wwx54b87k0gb3t135jt.w.modal.host",
+            "priority": "u=1, i",
+            "referer": "https://ta-01ka4wcy13zn0w2p8x90g5c5rb-5173.wo-9wwmc3wwx54b87k0gb3t135jt.w.modal.host/",
+            "sec-ch-ua": "\"Chromium\";v=\"142\", \"Microsoft Edge\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site",
+            "x-forwarded-for": "168.182.214.35",
+            "x-forwarded-host": "n8n-n8n.sjw220.easypanel.host",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "207baab59841",
+            "x-real-ip": "168.182.214.35"
+          },
+          "params": {},
+          "query": {
+            "id": "69190db747011b8cc408fe87",
+            "marca": "AUDI",
+            "modelo": "RS5",
+            "ano": "2025",
+            "preco": "150000",
+            "combustivel": "Gasolina",
+            "quilometros": "899",
+            "cor": "1",
+            "portas": "4",
+            "descricao": "TREMENDA BALA",
+            "fotos": "[\"https://base44.app/api/apps/6918be053a825ced23883c13/files/public/6918be053a825ced23883c13/ab1247c99_descarregar8.jpg\",\"https://base44.app/api/apps/6918be053a825ced23883c13/files/public/6918be053a825ced23883c13/ad13b132d_descarregar7.jpg\",\"https://base44.app/api/apps/6918be053a825ced23883c13/files/public/6918be053a825ced23883c13/d0d2f5866_AUDIRS5.jpg\"]"
+          },
+          "body": {},
+          "webhookUrl": "https://n8n-n8n.sjw220.easypanel.host/webhook/AC_NO_VENDIDO",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Webhook6": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n-n8n.sjw220.easypanel.host",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+            "accept": "*/*",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "accept-language": "pt-PT,pt;q=0.9,pt-BR;q=0.8,en;q=0.7,en-US;q=0.6,en-GB;q=0.5",
+            "if-none-match": "W/\"41c-gjHE8Mfolc5GkEMd+vAPSFoH1Fw\"",
+            "origin": "https://ta-01ka6avpr3hksckzy7hn2mvbkf-5173.wo-n5ec8xj68o2ba8bpydfx8ahu4.w.modal.host",
+            "priority": "u=1, i",
+            "referer": "https://ta-01ka6avpr3hksckzy7hn2mvbkf-5173.wo-n5ec8xj68o2ba8bpydfx8ahu4.w.modal.host/",
+            "sec-ch-ua": "\"Chromium\";v=\"142\", \"Microsoft Edge\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site",
+            "x-forwarded-for": "168.182.214.35",
+            "x-forwarded-host": "n8n-n8n.sjw220.easypanel.host",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "207baab59841",
+            "x-real-ip": "168.182.214.35"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "https://n8n-n8n.sjw220.easypanel.host/webhook/AC_READ_STOCK",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook2": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook3": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook4": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Clear sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clear sheet": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Delete rows or columns from sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook5": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet2": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Delete rows or columns from sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet2": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet3": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete rows or columns from sheet": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete rows or columns from sheet1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook6": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "Aggregate2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "82981259-54ca-4795-b243-280084a2c9b6",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "537acea3282144cd1a7dcffbae7904876d86d91fed380d2d5f9fcab2834ae1ef"
+  },
+  "id": "klZF7xE9BeqwTzar",
+  "tags": []
+}
